@@ -31,7 +31,14 @@ spec:
         - mountPath: /var/lib/docker/containers
           name: varlibdockercontainers
           readOnly: true
-      volumes:
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "20"
+        limits:
+          memory: "128Mi"
+          cpu: "30m"
+      olumes:
       - name: logs
         hostPath:
           path: /var/log

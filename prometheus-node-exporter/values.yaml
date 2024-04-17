@@ -1,0 +1,19 @@
+server:
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "20m"
+
+alertmanager:
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "20m"
+
+nodeExporter:
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "20m"
+
+# Add more components and customize resource requests as needed
