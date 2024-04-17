@@ -1,0 +1,28 @@
+# values.yaml
+postgresql:
+  postgresqlUsername: postgres
+  postgresqlPassword: postgres@2024
+  postgresqlDatabase: postgres
+  podAffinity: null
+  resources:
+    requests:
+      memory: "512Mi"   # Request 512MB of memory
+      cpu: "100m"       # Request 250 millicpu (0.25 CPU)
+    limits:
+      memory: "1Gi"     # Limit to 1GB of memory
+      cpu: "100m" 
+  persistence:
+    size: 1Gi
+
+pgadmin:
+  service:
+    type: NodePort
+  adminEmail: nguyenquang06012000@gmail.com
+  adminPassword: Secret@123
+  resources:
+    requests:
+      memory: "256Mi"   # Request 256MB of memory
+      cpu: "10m"       # Request 100 millicpu (0.1 CPU)
+    limits:
+      memory: "256Mi"   # Limit to 512MB of memory
+      cpu: "10m"

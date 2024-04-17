@@ -1,8 +1,26 @@
 deploymentMode: SingleBinary
+statefulset:
+  loki-chunks-cache:
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: "50m"
+  loki-results-cache:
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: "50m"
 loki:
   auth_enabled: false
   commonConfig:
     replication_factor: 1
+  resources:
+    requests:
+      memory: "100Mi"   # Request 512MB of memory
+      cpu: "20m"       # Request 250 millicpu (0.25 CPU)
+    limits:
+      memory: "100Mi"     # Limit to 1GB of memory
+      cpu: "20m" 
   storage:
     type: 'filesystem'
   schemaConfig:
